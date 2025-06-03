@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:snackr/features/home/HomeScreen.dart';
 import 'package:snackr/features/login/loginScreen.dart';
@@ -5,7 +6,9 @@ import 'package:snackr/features/onboard/onboardScreen.dart';
 
 import 'core/utils/shared/component/widgets/bottomaappbar.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 

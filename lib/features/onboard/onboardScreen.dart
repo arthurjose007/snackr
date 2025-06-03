@@ -30,68 +30,83 @@ class _OnboardscreenState extends State<Onboardscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-            child: PageView.builder(
-                controller: _controller,
-                onPageChanged: (int index) {
-                  setState(() {
-                    currentIndex = index;
-                  });
-                },
-                itemCount: Onboarding.contentsOnboarding.length,
-                itemBuilder: (context, index) {
-                  return Column(
-                    children: [
-                      Image.asset(
-                        Onboarding.contentsOnboarding[index].image,
-                        height: 450,
-                        width: MediaQuery.of(context).size.width,
-                        fit: BoxFit.fill,
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        Onboarding.contentsOnboarding[index].title,
-                        style: AppTextStyle.semiTextStyle,
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        Onboarding.contentsOnboarding[index].description,
-                        style: AppTextStyle.semiTextStyle,
-                      ),
-                      Container(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: List.generate(
-                              Onboarding.contentsOnboarding.length, (index) =>
-                            buildDot(index, context)
+      body: Padding(
+        padding: EdgeInsets.only(top: 40, left: 20, right: 20),
+        child: Column(
+          children: [
+            Expanded(
+              child: PageView.builder(
+                  controller: _controller,
+                  onPageChanged: (int index) {
+                    setState(() {
+                      currentIndex = index;
+                    });
+                  },
+                  itemCount: Onboarding.contentsOnboarding.length,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        Image.asset(
+                          Onboarding.contentsOnboarding[index].image,
+                          height: 450,
+                          width: MediaQuery.of(context).size.width,
+                          fit: BoxFit.fill,
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          Onboarding.contentsOnboarding[index].title,
+                          style: AppTextStyle.semiTextStyle,
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          Onboarding.contentsOnboarding[index].description,
+                          style: AppTextStyle.semiTextStyle,
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: List.generate(
+                                Onboarding.contentsOnboarding.length,
+                                (index) => buildDot(index, context)),
                           ),
                         ),
-                      ),
-                      GestureDetector(
-                        onTap:(){
-                  if(currentIndex==Onboarding.contentsOnboarding.length-1){
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=>Signupscreen()));
-            
-                  }
-                  _controller.nextPage(duration: Duration(microseconds: 100), curve: Curves.bounceIn);
-                  },
-                        child: Container(
-                          decoration: BoxDecoration(color: Colors.red),
-                          height: 60,
-                          width: double.infinity
-                          ,margin: EdgeInsets.all(40),child: Text("Next",style: AppTextStyle.semiTextStyle,),),
-                      )
-                    ],
-                  );
-                }),
-          )
-        ],
+                        GestureDetector(
+                          onTap: () {
+                            if (currentIndex ==
+                                Onboarding.contentsOnboarding.length - 1) {
+                              Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                      builder: (_) => Signupscreen()));
+                            }
+                            _controller.nextPage(
+                                duration: Duration(microseconds: 100),
+                                curve: Curves.bounceIn);
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(color: Colors.red),
+                            height: 60,
+                            width: double.infinity,
+                            margin: EdgeInsets.all(40),
+                            child: Center(
+                                child: Text(
+                              "Next",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                          ),
+                        )
+                      ],
+                    );
+                  }),
+            )
+          ],
+        ),
       ),
     );
   }
