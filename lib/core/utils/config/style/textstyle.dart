@@ -28,6 +28,11 @@ class AppTextStyle {
       fontSize: 18.0,
       fontWeight: FontWeight.w500,
       fontFamily: "Poppins");
+  static TextStyle loginTextStyle = TextStyle(
+      color: Colors.purple,
+      fontSize: 18.0,
+      fontWeight: FontWeight.w500,
+      fontFamily: "Poppins");
 }
 
 
