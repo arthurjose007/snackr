@@ -7,12 +7,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1027423879467:android:d4e57a54d11a588df5456e",
+        "mobilesdk_app_id": "1:1027423879467:android:7a16d9d9e37e9f19f5456e",
         "android_client_info": {
-          "package_name": "com.example.snack"
+          "package_name": "com.example.snackr"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1027423879467-mhsq14pie376tj7k5kfnntc052gneoag.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBmnGNxP4IdvhsYYIsrV8C1S2e52UFhE8o"
@@ -20,7 +25,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1027423879467-mhsq14pie376tj7k5kfnntc052gneoag.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

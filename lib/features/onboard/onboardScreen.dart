@@ -45,6 +45,7 @@ class _OnboardscreenState extends State<Onboardscreen> {
                   itemCount: Onboarding.contentsOnboarding.length,
                   itemBuilder: (context, index) {
                     return Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Image.asset(
                           Onboarding.contentsOnboarding[index].image,
@@ -57,15 +58,16 @@ class _OnboardscreenState extends State<Onboardscreen> {
                         ),
                         Text(
                           Onboarding.contentsOnboarding[index].title,
-                          style: AppTextStyle.semiTextStyle,
+                          style: AppTextStyle.onboardSemiTextStyle,
                         ),
                         SizedBox(
                           height: 20,
                         ),
                         Text(
                           Onboarding.contentsOnboarding[index].description,
-                          style: AppTextStyle.semiTextStyle,
+                          style: AppTextStyle.onBoardLightTextStyle,
                         ),
+                        SizedBox(height: 10,),
                         Container(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -87,13 +89,14 @@ class _OnboardscreenState extends State<Onboardscreen> {
                                 curve: Curves.bounceIn);
                           },
                           child: Container(
-                            decoration: BoxDecoration(color: Colors.red),
+                            decoration: BoxDecoration(color: Colors.red,borderRadius: BorderRadius.circular(10)),
                             height: 60,
                             width: double.infinity,
                             margin: EdgeInsets.all(40),
                             child: Center(
                                 child: Text(
-                              "Next",
+                                  currentIndex ==
+                                      Onboarding.contentsOnboarding.length - 1?"Sign UP" :"Next",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 20,
@@ -116,6 +119,8 @@ class _OnboardscreenState extends State<Onboardscreen> {
         height: 10,
         width: currentIndex == index ? 18 : 7,
         margin: EdgeInsets.only(right: 5),
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(6)));
+        decoration: BoxDecoration(
+          color: Colors.grey,
+            borderRadius: BorderRadius.circular(6)));
   }
 }

@@ -23,10 +23,21 @@ class AppTextStyle {
       fontWeight: FontWeight.w500,
 
       fontFamily: "Poppins");
+  static TextStyle onBoardLightTextStyle = TextStyle(
+      color: Colors.black45,
+      fontSize: 18.0,
+      fontWeight: FontWeight.w600,
+
+      fontFamily: "Poppins");
   static TextStyle semiTextStyle = TextStyle(
       color: Colors.black,
       fontSize: 18.0,
       fontWeight: FontWeight.w500,
+      fontFamily: "Poppins");
+  static TextStyle onboardSemiTextStyle = TextStyle(
+      color: Colors.black,
+      fontSize: 23.0,
+      fontWeight: FontWeight.w700,
       fontFamily: "Poppins");
   static TextStyle loginTextStyle = TextStyle(
       color: Colors.purple,

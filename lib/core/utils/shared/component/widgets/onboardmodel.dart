@@ -7,16 +7,16 @@ class Onboarding {
   static List<Onboarding> contentsOnboarding = [
     Onboarding(
         image: "images/screen1.png",
-        title: "Select from Our\n Best Menu ",
-        description: "Pick your food from our menu\n    More than 35 times"),
+        title: "Select from Our\n     Best Menu ",
+        description: "Pick your food from our menu\n            More than 35 times"),
     Onboarding(
         image: "images/screen2.png",
         title: "Easy and Online Payment",
         description:
-            "You can pay cash on delivery and\n   Card payment is available"),
+            "You can pay cash on delivery and\n       Card payment is available"),
     Onboarding(
         image: "images/screen3.png",
-        title: "Quick Delivery at your Door step",
+        title: "Quick Delivery at your Door\n                        Step",
         description: "Deliver your food at your Doorstep "),
   ];
 }
